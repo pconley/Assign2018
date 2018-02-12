@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
 
   def show
+    @user = session[:userinfo]['info'] if session && session[:userinfo]
   	@page = params[:page].downcase
+    puts "*** pages::show #{@page} user=#{@user}"
+
   	template = "pages/#{@page}"
 	  exists = lookup_context.template_exists?(template)
     if exists

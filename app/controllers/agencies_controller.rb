@@ -1,4 +1,7 @@
 class AgenciesController < ApplicationController
+
+  include Secured # see concerns
+
   before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
   # GET /agencies

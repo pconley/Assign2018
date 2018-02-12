@@ -7,6 +7,9 @@ end
 
 ruby "2.4.1" # heroku says to specify 
 
+gem 'omniauth', '~> 1.6.1'
+gem 'omniauth-auth0', '~> 2.0.0'
+
 gem 'chartkick'
 gem 'groupdate'
 
