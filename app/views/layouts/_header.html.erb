@@ -1,0 +1,32 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <%= link_to "Test2 [#{Rails.env[0..2]}]", pages_path('about'), class:"navbar-brand" %>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item <%= 'active' if @page == 'about' %>">
+          <%= link_to 'About', pages_path('about'), class:"nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if @page == 'settings' %>">
+          <%= link_to 'Settings', pages_path('settings'), class:"nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if @page == 'profile' %>">
+          <%= link_to 'Profile', pages_path('profile'), class:"nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if @page == 'help' %>">
+          <%= link_to 'Help', pages_path('help'), class:"nav-link" %>
+        </li>
+      </ul>
+
+      <%= form_tag(search_path, method: "get", class:"form-inline mt-2 mt-md-0") do %>
+        <%= text_field_tag(:q, nil, placeholder: "Search", class: 'form-control mr-sm-2') %>
+        <%= submit_tag("Search", class:"btn btn-outline-success my-2 my-sm-0") %>
+      <% end %>
+
+    </div>
+  </nav>
+</header>

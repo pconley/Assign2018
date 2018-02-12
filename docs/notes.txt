@@ -1,0 +1,15 @@
+
+-- gen a new rails
+
+-- add to gemfile
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.7'
+  gem 'factory_bot_rails'
+  gem 'faker'
+end
+
+-- $ rails generate rspec:install
+
+rails g scaffold Contact name phone email
+rails g scaffold Agency name status state:boolean logo

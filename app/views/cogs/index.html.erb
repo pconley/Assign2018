@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cogs.each do |cog| %>
+      <tr>
+        <td><%= cog.name %></td>
+        <td><%= cog.size %></td>
+        <td><%= cog.color %></td>
+        <td><%= link_to 'Show', cog %></td>
+        <td><%= link_to 'Edit', edit_cog_path(cog) %></td>
+        <td><%= link_to 'Destroy', cog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cog', new_cog_path %>
