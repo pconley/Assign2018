@@ -30,6 +30,11 @@
       <%= link_to 'Cogs...', cogs_path, class:"nav-link #{active}" %>
     </li>
     <li class="nav-item">
+      <% active = current_page?(controller: 'agencies', action: 'index') ? 'nav-active' : '' %>
+      <%= link_to 'Agency...', agencies_path, class:"nav-link #{active}" %>
+    </li>
+
+    <li class="nav-item">
       <% active = current_page?(controller: 'widgets', action: 'index') ? 'nav-active' : '' %>
       <%= link_to 'Widgets...', widgets_path, class:"nav-link #{active}" %>
     </li>
