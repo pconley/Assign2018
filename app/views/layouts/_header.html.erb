@@ -7,7 +7,6 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-
         <li class="nav-item <%= 'active' if @page == 'about' %>">
           <%= link_to 'About', pages_path('about'), class:"nav-link" %>
         </li>
@@ -17,19 +16,16 @@
         <li class="nav-item <%= 'active' if @page == 'profile' %>">
           <%= link_to 'Profile', pages_path('profile'), class:"nav-link" %>
         </li>
-        <li class="nav-item <%= 'active' if @page == 'help' %>">
-          <%= link_to 'Login', "/auth/auth0", class:"nav-link" %>
-        </li>
-        <li class="nav-item <%= 'active' if @page == 'help' %>">
-          <%= link_to 'Logout', logout_path, class:"nav-link" %>
-        </li>
-
       </ul>
 
       <%= form_tag(search_path, method: "get", class:"form-inline mt-2 mt-md-0") do %>
         <%= text_field_tag(:q, nil, placeholder: "Search", class: 'form-control mr-sm-2') %>
         <%= submit_tag("Search", class:"btn btn-outline-success my-2 my-sm-0") %>
       <% end %>
+
+      <div class="nav-item" >
+          <%= link_to 'Logout', logout_path, class:"nav-link" %>
+      </div>
 
     </div>
   </nav>

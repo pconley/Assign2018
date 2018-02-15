@@ -1,0 +1,20 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <%= link_to "Assign2018 [#{Rails.env[0..2]}]", public_pages_home_path, class:"navbar-brand" %>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item <%= 'active' if @page == 'about' %>">
+          <%= link_to 'About', public_pages_about_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if @page == 'help' %>">
+          <%= link_to 'Login', "/auth/auth0", class:"nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
